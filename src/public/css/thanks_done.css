@@ -1,0 +1,40 @@
+.thanks__content {
+    background-color: white;
+    max-width: 500px;
+    height: 300px;
+    margin: 50px auto;
+    padding: 0 0 20px 0;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.thanks-message {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 70px 0;
+}
+
+.back-button__container {
+    background-color: mediumblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.back-button {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .thanks__content {
+        width: 400px;
+    }
+}

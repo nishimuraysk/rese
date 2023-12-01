@@ -1,0 +1,123 @@
+.search-box {
+    max-width: 1230px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+}
+
+.shop-select__form {
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.shop-select__area {
+    height: 35px;
+    width: 120px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: 1px;
+    border-color: beige;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.shop-select__category {
+    height: 35px;
+    width: 120px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: 1px;
+    border-color: beige;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.shop-select__text {
+    height: 35px;
+    width: 250px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right-width: 1px;
+    border-color: beige;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.shop-select__button {
+    height: 35px;
+    width: 35px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.shop-card__content {
+    max-width: 1230px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 20px 0 20px;
+}
+
+.shop-card__content:after {
+    content: "";
+    display: block;
+    width: 280px;
+    height: 0;
+    margin: 5px 5px 10px 0;
+}
+
+.shop-card__content:before {
+    content: "";
+    display: block;
+    width: 280px;
+    height: 0;
+    order: 1;
+    margin: 5px 5px 10px 0;
+}
+
+.shop-card__container {
+    width: 280px;
+    margin: 5px 5px 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .search-box {
+        justify-content: center;
+    }
+
+    .shop-select__form {
+        margin: auto;
+    }
+
+    .shop-select__area {
+        width: 100px;
+    }
+
+    .shop-select__category {
+        width: 100px;
+    }
+
+    .shop-select__text {
+        width: 150px;
+    }
+
+    .shop-card__container {
+        width: 385px;
+    }
+
+    .shop-card__content {
+        justify-content: center;
+        padding: 20px 0;
+    }
+}

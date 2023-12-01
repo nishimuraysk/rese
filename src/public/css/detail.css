@@ -1,0 +1,170 @@
+.shop-detail__content {
+    max-width: 1230px;
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.shop-detail__container {
+    width: 600px;
+}
+
+.shop-detail__header {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.shop-detail__back-button {
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+    color: black;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.shop-detail__title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.shop-detail__image-container {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.shop-detail__image {
+    width: 100%;
+}
+
+.shop-detail__tag-container {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.shop-detail__tag {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.shop-detail__description-container {
+    width: 100%;
+}
+
+.shop-detail__description {
+    font-size: 14px;
+}
+
+.reservation-container {
+    width: 550px;
+    height: 650px;
+    background-color: mediumblue;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.reservation__title {
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    padding: 20px 20px;
+}
+
+.reservation__date-container {
+    width: 40%;
+    padding: 0 20px;
+}
+
+.reservation__date {
+    width: 100%;
+    height: 30px;
+}
+
+.reservation__time-container {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 20px;
+}
+
+.reservation__time {
+    width: 100%;
+    height: 30px;
+}
+
+.reservation__number-container {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 20px;
+}
+
+.reservation__number {
+    width: 100%;
+    height: 30px;
+}
+
+.reservation-table {
+    margin: 20px 20px;
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: rgb(2, 2, 173);
+}
+
+.reservation-column {
+    display: flex;
+    align-items: start;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+.reservation-item {
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.reservation-button__container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.reservation-button {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(2, 2, 129);
+    border: none;
+    border-radius: 0 0 5px 5px;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .shop-detail__container {
+        width: 500px;
+        margin: 0 20px;
+    }
+
+    .reservation-container {
+        width: 500px;
+        margin: 20px 20px;
+        height: 500px;
+    }
+}

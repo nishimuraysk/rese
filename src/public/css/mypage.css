@@ -1,0 +1,133 @@
+.user-name {
+    max-width: 1230px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.mypage__content {
+    max-width: 1230px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.reservation-status {
+    width: 500px;
+}
+
+.content-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.reservation__content {
+    width: 400px;
+    background-color: mediumblue;
+    border-radius: 5px;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+}
+
+.reservation__header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reservation__clock-image {
+    color: white;
+    padding: 15px 0 0 20px;
+}
+
+.reservation-title {
+    color: white;
+    font-size: 14px;
+    padding: 15px 0 0 20px;
+}
+
+.cancel-button-container {
+    padding: 15px 0 0 20px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.cancel-button {
+    color: white;
+    background-color: mediumblue;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.reservation-column {
+    display: flex;
+    align-items: start;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+.reservation-item {
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.favotite-shops {
+    max-width: 650px;
+}
+
+.shop-card__content {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.shop-card__container {
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.shop-card__content:after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 0;
+    margin: 0 auto 10px auto;
+}
+
+@media screen and (max-width: 768px) {
+    .reservation-status {
+        width: 500px;
+        padding-left: 0;
+    }
+
+    .content-title {
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    .reservation__content {
+        margin: 0 auto 10px auto;
+    }
+
+    .favotite-shops {
+        margin-top: 30px;
+    }
+
+    .shop-card__container {
+        width: 385px;
+        margin: 0 auto 10px auto;
+    }
+}
