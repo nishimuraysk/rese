@@ -8,7 +8,7 @@
     <div class="shop-detail__content">
         <div class="shop-detail__container">
             <div class="shop-detail__header">
-                <a class="shop-detail__back-button" href="/"><</a>
+                <a class="shop-detail__back-button" href="/">＜</a>
                 <p class="shop-detail__title">{{ $shop['name'] }}</p>
             </div>
             <div class="shop-detail__image-container">
@@ -74,6 +74,15 @@
                     <tr><th class="reservation-column">Time</th><td class="reservation-item" id="reservation-item__time"></td></tr>
                     <tr><th class="reservation-column">Number</th><td class="reservation-item" class="reservation-item" id="reservation-item__number"></td></tr>
                 </table>
+                @if ( $errors->any() )
+                <div class="reservation__alert">
+                    <ul>
+                        @foreach ( $errors->all() as $error )
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <div class="reservation-button__container">
                     <button class="reservation-button">予約する</button>
                 </div>

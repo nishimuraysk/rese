@@ -2,7 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-<link rel="stylesheet" href="{{ asset('css/shop-card.css') }}">
+<link rel="stylesheet" href="{{ asset('css/shop_card.css') }}">
 @endsection
 
 @section('content')
@@ -84,4 +84,9 @@
         </div>
         @endforeach
     </div>
+    @if (count($shops) === 0)
+        <div class="no-hit__message">
+            <p class="no-hit__message-text">該当の店舗情報はございません。</p>
+        </div>
+    @endif
 @endsection

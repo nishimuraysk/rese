@@ -27,4 +27,13 @@ class ReservationRequest extends FormRequest
             'number' => ['required', 'integer'],
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'date' => '明日以降の日付を選択してください',
+            'time' => '時間を選択してください',
+            'number' => '人数を選択してください',
+        ];
+    }
 }

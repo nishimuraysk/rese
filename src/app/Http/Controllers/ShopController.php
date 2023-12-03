@@ -42,9 +42,9 @@ class ShopController extends Controller
         $selected_area = $request->area_id;
         $selected_category = $request->category_id;
         $input_keyword = $request->keyword;
-        $shops = Shop::with(['area', 'category'])->AreaSearch($selected_area)->CategorySearch($selected_category)->KeywordSearch($input_keyword)->get();
         $areas = Area::all();
         $categories = Category::all();
+        $shops = Shop::with(['area', 'category'])->AreaSearch($selected_area)->CategorySearch($selected_category)->KeywordSearch($input_keyword)->get();
 
         return view('index', ['shops'=>$shops, 'areas'=>$areas, 'categories'=>$categories, 'selected_area'=>$selected_area, 'selected_category'=>$selected_category, 'input_keyword'=>$input_keyword]);
     }

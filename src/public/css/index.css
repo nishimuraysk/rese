@@ -91,6 +91,17 @@
     margin: 5px 5px 10px 0;
 }
 
+.no-hit__message {
+    max-width: 1230px;
+    margin: 50px auto;
+}
+
+.no-hit__message-text {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 768px) {
     .search-box {
         justify-content: center;
@@ -119,5 +130,9 @@
     .shop-card__content {
         justify-content: center;
         padding: 20px 0;
+    }
+
+    .no-hit__message {
+        margin-top: 0px;
     }
 }

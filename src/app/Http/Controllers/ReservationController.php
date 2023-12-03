@@ -29,4 +29,16 @@ class ReservationController extends Controller
 
         return redirect()->back();
     }
+
+    public function update(ReservationRequest $request, $reservation_id)
+    {
+        $update_data = [
+            'date' => $request->date,
+            'time' => $request->time,
+            'number' => $request->number,
+        ];
+
+        Reservation::find($reservation_id)->update($update_data);
+        return redirect()->back()->with('message', '予約内容を変更しました');
+    }
 }

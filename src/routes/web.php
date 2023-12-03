@@ -13,6 +13,8 @@ Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/mypage', [UserController::class, 'mypage']);
+    Route::get('/mypage/reservation/{reservation_id}', [UserController::class, 'reservation']);
+    Route::post('/mypage/reservation/{reservation_id}', [ReservationController::class, 'update']);
     Route::post('/favorite', [FavoriteController::class, 'create']);
     Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
     Route::post('/reserve', [ReservationController::class, 'create']);

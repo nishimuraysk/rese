@@ -2,7 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
-<link rel="stylesheet" href="{{ asset('css/shop-card.css') }}">
+<link rel="stylesheet" href="{{ asset('css/shop_card.css') }}">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 @endsection
 
@@ -33,17 +33,30 @@
                     <table class="reservation-table">
                         <tr><th class="reservation-column">Shop</th><td class="reservation-item">{{ $reservation['shop']['name'] }}</td></tr>
                         <tr><th class="reservation-column">Date</th><td class="reservation-item">{{ $reservation['date'] }}</td></tr>
-                        <tr><th class="reservation-column">Time</th><td class="reservation-item">{{ $reservation['time'] }}</td></tr>
+                        <tr><th class="reservation-column">Time</th><td class="reservation-item">{{ substr($reservation['time'], 0, 5) }}</td></tr>
                         <tr><th class="reservation-column">Number</th><td class="reservation-item">{{ $reservation['number'] }}人</td></tr>
                     </table>
+                    <div class="reservation__update__link__container">
+                        <a class="reservation__update__link" href="/mypage/reservation/{{ $reservation['id'] }}">予約内容を変更する ＞</a>
+                    </div>
                 </div>
             <?php
                 $i++;
                 endforeach;
             ?>
+            @if (count($reservations) === 0)
+                <div class="no-hit__message">
+                    <p class="no-hit__message-text">予約の店舗情報はございません。</p>
+                </div>
+            @endif
         </div>
         <div class="favotite-shops">
             <p class="content-title">お気に入り店舗</p>
+            @if (count($favorites) === 0)
+                <div class="no-hit__message">
+                    <p class="no-hit__message-text">お気に入りの店舗情報はございません。</p>
+                </div>
+            @endif
             <div class="shop-card__content">
             @foreach ( $favorites as $favorite )
                 <div class="shop-card__container">

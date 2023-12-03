@@ -6,16 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Favorite;
 use App\Models\Reservation;
 use App\Models\Shop;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
     public function mypage()
     {
+        $yesterday = Carbon::yesterday('Asia/Tokyo')->format('Y-m-d');
         $user = auth()->user();
-        $reservations = Reservation::with('shop')->where('user_id', $user->id)->get();
+        $reservations = Reservation::with('shop')->where('user_id', $user->id)->whereDate('date', '>', $yesterday)->orderBy('date', 'asc')->get();
         $favorites = Favorite::with('shop')->where('user_id', $user->id)->get();
 
-        if( !empty($favorites))
+        if( !empty($favorites) )
         {
             $shops = Shop::with(['area', 'category'])->get();
 
@@ -33,5 +35,19 @@ class UserController extends Controller
         }
 
         return view ('mypage' ,['user'=>$user, 'favorites'=>$favorites, 'reservations'=>$reservations ]);
+    }
+
+    public function reservation(Request $request, $reservation_id)
+    {
+        $user = auth()->user();
+        $reservation = Reservation::with('shop')->where('id', $reservation_id)->first();
+        $tomorrow = Carbon::tomorrow('Asia/Tokyo')->format('Y-m-d');
+
+        if ( empty($reservation) || $user->id != $reservation->user_id )
+        {
+            return redirect('/mypage');
+        }
+
+        return view('reservation_update', ['reservation'=>$reservation, 'tomorrow'=>$tomorrow, 'user'=>$user]);
     }
 }

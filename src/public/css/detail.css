@@ -2,12 +2,13 @@
     max-width: 1230px;
     margin: 20px auto 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .shop-detail__container {
     width: 600px;
+    margin: 0 30px;
 }
 
 .shop-detail__header {
@@ -156,6 +157,10 @@
     cursor: pointer;
 }
 
+.reservation__alert {
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
     .shop-detail__container {
         width: 500px;
@@ -165,6 +170,5 @@
     .reservation-container {
         width: 500px;
         margin: 20px 20px;
-        height: 500px;
     }
 }
