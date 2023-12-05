@@ -50,4 +50,13 @@ class UserController extends Controller
 
         return view('reservation_update', ['reservation'=>$reservation, 'tomorrow'=>$tomorrow, 'user'=>$user]);
     }
+
+    public function history()
+    {
+        $yesterday = Carbon::yesterday('Asia/Tokyo')->format('Y-m-d');
+        $user = auth()->user();
+        $reservations = Reservation::with('shop')->where('user_id', $user->id)->whereDate('date', '<', $yesterday)->orderBy('date', 'asc')->get();
+
+        return view ('history' ,['user'=>$user, 'reservations'=>$reservations ]);
+    }
 }

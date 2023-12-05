@@ -13,6 +13,9 @@
     <div class="mypage__content">
         <div class="reservation-status">
             <p class="content-title">予約状況</p>
+            <div class="history__link__container">
+                <a class="history__link" href="/mypage/history">過去の予約内容を見る ＞</a>
+            </div>
             <?php
                 $i=1;
                 foreach ($reservations as $reservation) :

@@ -95,8 +95,23 @@
     font-size: 14px;
 }
 
+.history__link__container {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.history__link {
+    text-decoration: none;
+    color: mediumblue;
+    font-size: 14px;
+    margin: 0 0 0 auto;
+}
+
 .favotite-shops {
     width: 650px;
+    font-weight: 900;
 }
 
 .shop-card__content {
@@ -131,11 +146,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    .reservation-status {
-        width: 500px;
-        padding-left: 0;
-    }
-
     .content-title {
         display: flex;
         justify-content: center;
@@ -153,5 +163,9 @@
     .shop-card__container {
         width: 385px;
         margin: 0 auto 10px auto;
+    }
+
+    .history__link__container {
+        margin: 0 auto 20px auto;
     }
 }

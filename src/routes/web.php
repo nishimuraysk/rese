@@ -19,6 +19,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/favorite/delete', [FavoriteController::class, 'delete']);
     Route::post('/reserve', [ReservationController::class, 'create']);
     Route::post('/reserve/delete', [ReservationController::class, 'delete']);
+    Route::get('/mypage/history', [UserController::class, 'history']);
     Route::get('/done', function () {return view('done');});
 })->middleware(['auth', 'verified'])->name('dashboard');
 
