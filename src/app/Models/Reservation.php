@@ -24,4 +24,9 @@ class Reservation extends Model
         {
             return $this->belongsTo('App\Models\User');
         }
+
+    public function review()
+        {
+            return $this->hasOne('App\Models\Review');
+        }
 }

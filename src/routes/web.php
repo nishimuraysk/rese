@@ -5,6 +5,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ShopController::class, 'index']);
@@ -20,6 +21,9 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('/reserve', [ReservationController::class, 'create']);
     Route::post('/reserve/delete', [ReservationController::class, 'delete']);
     Route::get('/mypage/history', [UserController::class, 'history']);
+    Route::get('/mypage/review/done', function () {return view('review_done');});
+    Route::get('/mypage/review/{reservation_id}', [ReviewController::class, 'index']);
+    Route::post('/mypage/review/{reservation_id}', [ReviewController::class, 'review']);
     Route::get('/done', function () {return view('done');});
 })->middleware(['auth', 'verified'])->name('dashboard');
 

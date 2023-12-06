@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Favorite;
 use App\Models\Reservation;
 use App\Models\Shop;
+use App\Models\Review;
 use Carbon\Carbon;
 
 class UserController extends Controller
@@ -53,10 +54,22 @@ class UserController extends Controller
 
     public function history()
     {
-        $yesterday = Carbon::yesterday('Asia/Tokyo')->format('Y-m-d');
+        $today = Carbon::today('Asia/Tokyo')->format('Y-m-d');
         $user = auth()->user();
-        $reservations = Reservation::with('shop')->where('user_id', $user->id)->whereDate('date', '<', $yesterday)->orderBy('date', 'asc')->get();
+        $reservations = Reservation::with('shop')->where('user_id', $user->id)->whereDate('date', '<', $today)->orderBy('date', 'asc')->get();
+        $reviews = Review::all();
 
-        return view ('history' ,['user'=>$user, 'reservations'=>$reservations ]);
+        foreach ( $reservations as $reservation )
+            {
+                foreach ( $reviews as $review )
+                {
+                    if ( $reservation->id == $review->reservation_id )
+                    {
+                        $reservation['review'] = 1;
+                    }
+                }
+            }
+
+        return view ('history' ,['user'=>$user, 'reservations'=>$reservations]);
     }
 }

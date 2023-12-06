@@ -159,6 +159,8 @@
 
 .reservation__alert {
     color: white;
+    font-size: 14px;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {

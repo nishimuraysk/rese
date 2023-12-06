@@ -33,9 +33,15 @@
                         <tr><th class="reservation-column">Time</th><td class="reservation-item">{{ substr($reservation['time'], 0, 5) }}</td></tr>
                         <tr><th class="reservation-column">Number</th><td class="reservation-item">{{ $reservation['number'] }}人</td></tr>
                     </table>
-                    <div class="old-reservation__link__container">
-                        <a class="old-reservation__link" href="/mypage/review/{{ $reservation['id'] }}">レビューを投稿する ＞</a>
-                    </div>
+                    @if ( $reservation['review'] == 1 )
+                        <div class="old-reservation__link__container">
+                            <div class="old-reservation__link">レビュー投稿済</div>
+                        </div>
+                    @else
+                        <div class="old-reservation__link__container">
+                            <a class="old-reservation__link" href="/mypage/review/{{ $reservation['id'] }}">レビューを投稿する ＞</a>
+                        </div>
+                    @endif
                 </div>
             <?php
                 $i++;
