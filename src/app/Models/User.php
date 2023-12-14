@@ -15,6 +15,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
     ];
 
     protected $hidden = [
@@ -35,5 +36,15 @@ class User extends Authenticatable
     public function favorites()
     {
         return $this->hasMany('App\Models\Favorite');
+    }
+
+    public function role()
+    {
+        return $this->belongsTo('App\Models\Role');
+    }
+
+    public function representative()
+    {
+        return $this->hasOne('App\Models\Representative');
     }
 }

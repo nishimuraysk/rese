@@ -6,6 +6,25 @@
 @endsection
 
 @section('content')
+    @if ( !empty( $user ) && $user->role_id == 3 && !empty( $representative ) )
+        <div class="admin-link__content">
+            <div class="admin-link__container">
+                <a class="admin-link" href="/shop/reservation/{{ $representative['shop_id'] }}">管理画面はこちら ＞</a>
+            </div>
+        </div>
+    @elseif ( !empty( $user ) && $user->role_id == 3 && empty( $representative ) )
+        <div class="admin-link__content">
+            <div class="admin-link__container">
+                <a class="admin-link" href="/shop">店舗情報の登録はこちら ＞</a>
+            </div>
+        </div>
+    @elseif ( !empty( $user ) && $user->role_id == 2 )
+        <div class="admin-link__content">
+            <div class="admin-link__container">
+                <a class="admin-link" href="/representative">店舗代表者の登録はこちら ＞</a>
+            </div>
+        </div>
+    @endif
     <div class="search-box">
         <form action="/search" class="shop-select__form" method="get">
             @csrf

@@ -1,0 +1,91 @@
+.admin__container {
+    max-width: 1230px;
+    margin: 45px auto 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin__content-selected {
+    width: 200px;
+    height: 35px;
+    background-color: rgb(59, 54, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.admin-selected {
+    color: white;
+    font-size: 14px;
+}
+
+.admin__content-unselected {
+    width: 200px;
+    height: 35px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+}
+
+.admin-unselected {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.reservation__content {
+    max-width: 1230px;
+    margin: 10px auto;
+}
+
+.h1 {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.table {
+    margin: 0 auto;
+    width: 70%;
+    text-align: left;
+}
+
+.table__inner {
+    width: 100%;
+}
+
+.table__row {
+    border-bottom: 1px solid #ddd;
+    height: 60px;
+}
+
+.table__header {
+    padding: 12px;
+    width: 20%;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.table__item {
+    padding: 12px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .table {
+        width: 95%;
+    }
+}

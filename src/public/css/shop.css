@@ -1,0 +1,149 @@
+.admin__container {
+    max-width: 1230px;
+    margin: 20px auto 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin__content-selected {
+    width: 200px;
+    height: 35px;
+    background-color: rgb(59, 54, 54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.admin-selected {
+    color: white;
+    font-size: 14px;
+}
+
+.admin__content-unselected {
+    width: 200px;
+    height: 35px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+}
+
+.admin-unselected {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.input__content {
+    max-width: 1230px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1 {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+
+.input__container {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+}
+
+.input-label {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-text {
+    width: 350px;
+    height: 35px;
+    padding: 5px;
+}
+
+.input-area {
+    width: 350px;
+    height: 35px;
+    padding: 5px;
+}
+
+.input-category {
+    width: 350px;
+    height: 35px;
+    padding: 5px;
+}
+
+.input-summary {
+    width: 350px;
+    height: 280px;
+    padding: 5px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.input-image {
+    width: 350px;
+    height: 35px;
+    padding: 5px;
+}
+
+.input-button__container {
+    width: 450px;
+    height: 35px;
+    margin: 30px auto;
+}
+
+.input-button {
+    width: 100%;
+    height: 45px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: rgb(59, 54, 54);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.error__container {
+    width: 450px;
+    color: red;
+    font-size: 14px;
+}
+
+.action_message--container {
+    width: 100%;
+    height: 35px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.action_message {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: slategrey;
+    color: white;
+}

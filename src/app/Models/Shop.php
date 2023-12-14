@@ -35,6 +35,11 @@ class Shop extends Model
         return $this->belongsTo('App\Models\Category');
     }
 
+    public function representative()
+    {
+        return $this->hasOne('App\Models\Representative');
+    }
+
     public function scopeAreaSearch($query, $area_id)
     {
         if (!empty($area_id)) {

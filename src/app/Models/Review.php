@@ -14,7 +14,7 @@ class Review extends Model
     ];
 
     public function reservation()
-        {
-            return $this->belongsTo('App\Models\Reservation');
-        }
+    {
+        return $this->belongsTo('App\Models\Reservation');
+    }
 }

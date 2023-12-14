@@ -20,7 +20,7 @@ class ReservationController extends Controller
 
         Reservation::create($create_data);
 
-        return view('/done');
+        return redirect('/done');
     }
 
     public function delete(Request $request)

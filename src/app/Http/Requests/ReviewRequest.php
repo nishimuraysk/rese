@@ -23,7 +23,7 @@ class ReviewRequest extends FormRequest
     {
         return [
             'evaluation' => ['required', 'integer'],
-            'comment' => ['required', 'max:250'],
+            'comment' => ['required', 'string', 'max:250'],
         ];
     }
 

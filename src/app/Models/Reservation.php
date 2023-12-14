@@ -16,17 +16,17 @@ class Reservation extends Model
     ];
 
     public function shop()
-        {
-            return $this->belongsTo('App\Models\Shop');
-        }
+    {
+        return $this->belongsTo('App\Models\Shop');
+    }
 
     public function user()
-        {
-            return $this->belongsTo('App\Models\User');
-        }
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 
     public function review()
-        {
-            return $this->hasOne('App\Models\Review');
-        }
+    {
+        return $this->hasOne('App\Models\Review');
+    }
 }
