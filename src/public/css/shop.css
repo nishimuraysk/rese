@@ -147,3 +147,10 @@
     background-color: slategrey;
     color: white;
 }
+
+.cautionary-note {
+    width: 450px;
+    color: red;
+    font-size: 14px;
+    margin: 10px auto;
+}

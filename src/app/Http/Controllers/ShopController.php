@@ -21,26 +21,22 @@ class ShopController extends Controller
         $areas = Area::all();
         $categories = Category::all();
 
-        if( !empty($user) )
-        {
+        if (!empty($user)) {
             $representative = Representative::where('user_id', $user->id)->first();
             $favorites = Favorite::where('user_id', $user->id)->get();
 
-            foreach ($shops as $shop)
-            {
-                foreach ($favorites as $favorite)
-                {
-                    if ($shop->id == $favorite->shop_id)
-                    {
+            foreach ($shops as $shop) {
+                foreach ($favorites as $favorite) {
+                    if ($shop->id == $favorite->shop_id) {
                         $shop['favorite'] = 1;
                     }
                 }
             }
 
-            return view('index', ['user'=>$user, 'shops'=>$shops, 'areas'=>$areas, 'categories'=>$categories, 'representative'=>$representative]);
+            return view('index', ['user' => $user, 'shops' => $shops, 'areas' => $areas, 'categories' => $categories, 'representative' => $representative]);
         }
 
-        return view('index', ['shops'=>$shops, 'areas'=>$areas, 'categories'=>$categories]);
+        return view('index', ['shops' => $shops, 'areas' => $areas, 'categories' => $categories]);
     }
 
     public function search(Request $request)
@@ -52,17 +48,17 @@ class ShopController extends Controller
         $categories = Category::all();
         $shops = Shop::with(['area', 'category'])->AreaSearch($selected_area)->CategorySearch($selected_category)->KeywordSearch($input_keyword)->get();
 
-        return view('index', ['shops'=>$shops, 'areas'=>$areas, 'categories'=>$categories, 'selected_area'=>$selected_area, 'selected_category'=>$selected_category, 'input_keyword'=>$input_keyword]);
+        return view('index', ['shops' => $shops, 'areas' => $areas, 'categories' => $categories, 'selected_area' => $selected_area, 'selected_category' => $selected_category, 'input_keyword' => $input_keyword]);
     }
 
-    public function detail(Request $request, $shop_id)
+    public function detail($shop_id)
     {
         $shop = Shop::with(['area', 'category'])->where('id', $shop_id)->first();
         $areas = Area::all();
         $categories = Category::all();
         $tomorrow = Carbon::tomorrow('Asia/Tokyo')->format('Y-m-d');
 
-        return view('detail', ['shop'=>$shop, 'areas'=>$areas, 'categories'=>$categories, 'tomorrow'=>$tomorrow]);
+        return view('detail', ['shop' => $shop, 'areas' => $areas, 'categories' => $categories, 'tomorrow' => $tomorrow]);
     }
 
     public function shop()
@@ -74,9 +70,8 @@ class ShopController extends Controller
         $categories = Category::all();
         $representative = Representative::where('user_id', $user_id)->first();
 
-        if ( $role_id == 3 && empty($representative) )
-        {
-            return view('shop_create', ['areas'=>$areas, 'categories'=>$categories]);
+        if ($role_id == 3 && empty($representative)) {
+            return view('shop_create', ['areas' => $areas, 'categories' => $categories]);
         } else {
             return redirect('/');
         }
@@ -89,13 +84,28 @@ class ShopController extends Controller
             'area_id' => $request->area,
             'category_id' => $request->category,
             'summary' => $request->summary,
-            'image' => $request->image
+            'image' => $request->image,
         ];
 
         Shop::create($shop_create_data);
 
         $shop_id = Shop::latest()->first()->id;
         $user_id = auth()->user()->id;
+
+        $latest_shop_id = Shop::latest()->first()->id;
+        $file_name = $latest_shop_id . ".jpg";
+        $request->file('image')->storeAs('public', $file_name);
+        $update_file_name = "/storage/" . $file_name;
+
+        $shop_update_data = [
+            'name' => $request->name,
+            'area_id' => $request->area,
+            'category_id' => $request->category,
+            'summary' => $request->summary,
+            'image' => $update_file_name,
+        ];
+
+        Shop::find($shop_id)->update($shop_update_data);
 
         $representative_create_data = [
             'user_id' => $user_id,
@@ -107,7 +117,7 @@ class ShopController extends Controller
         return redirect('/shop/done');
     }
 
-    public function renew(Request $request, $shop_id)
+    public function renew($shop_id)
     {
         $user = auth()->user();
         $role_id = $user->role_id;
@@ -117,9 +127,8 @@ class ShopController extends Controller
         $categories = Category::all();
         $representative = Representative::where('user_id', $user_id)->first();
 
-        if ( $role_id == 3 && !empty($representative) && $shop_id == $representative->shop_id )
-        {
-            return view('shop_update', ['shop'=>$shop, 'areas'=>$areas, 'categories'=>$categories]);
+        if ($role_id == 3 && !empty($representative) && $shop_id == $representative->shop_id) {
+            return view('shop_update', ['shop' => $shop, 'areas' => $areas, 'categories' => $categories]);
         } else {
             return redirect('/');
         }
@@ -127,27 +136,31 @@ class ShopController extends Controller
 
     public function update(ShopRequest $request, $shop_id)
     {
+        $file_name = $shop_id . ".jpg";
+
+        if (!empty($request->image)) {
+            $request->file('image')->storeAs('public', $file_name);
+        }
+
+        $update_file_name = "/storage/" . $file_name;
+
         $update_data = [
             'name' => $request->name,
             'area_id' => $request->area,
             'category_id' => $request->category,
             'summary' => $request->summary,
-            'image' => $request->image,
+            'image' => $update_file_name,
         ];
 
         Shop::find($shop_id)->update($update_data);
         return redirect()->back()->with('message', '店舗情報を変更しました');
     }
 
-    public function representative(Request $request, $shop_id)
+    public function representative($shop_id)
     {
-        $user = auth()->user();
-        $role_id = $user->role_id;
-        $user_id = $user->id;
-        $representative = Representative::where('user_id', $user_id)->first();
         $shop = Shop::with(['area', 'category'])->where('id', $shop_id)->first();
         $reservations = Reservation::with('user')->where('shop_id', $shop_id)->get();
 
-        return view('representative_reservation', ['shop'=>$shop, 'reservations'=>$reservations]);
+        return view('representative_reservation', ['shop' => $shop, 'reservations' => $reservations]);
     }
 }

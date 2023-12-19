@@ -26,7 +26,7 @@ class ShopRequest extends FormRequest
             'area' => ['required', 'integer'],
             'category' => ['required', 'integer'],
             'summary' => ['required', 'string', 'max:255'],
-            'image' => ['required', 'string', 'max:255'],
+            'image' => ['max:255'],
         ];
     }
 
