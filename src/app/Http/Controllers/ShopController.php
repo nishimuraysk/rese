@@ -136,13 +136,14 @@ class ShopController extends Controller
 
     public function update(ShopRequest $request, $shop_id)
     {
-        $file_name = $shop_id . ".jpg";
+        $shop = Shop::where('id', $shop_id)->first();
+        $update_file_name = $shop->image;
 
         if (!empty($request->image)) {
+            $file_name = $shop_id . ".jpg";
             $request->file('image')->storeAs('public', $file_name);
+            $update_file_name = "/storage/" . $file_name;
         }
-
-        $update_file_name = "/storage/" . $file_name;
 
         $update_data = [
             'name' => $request->name,
