@@ -6,6 +6,7 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RepresentativeController;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth']], function () {
@@ -38,6 +39,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/representative/done', function () {
         return view('representative_done');
     });
+    Route::get('/select', [RepresentativeController::class, 'select']);
+    Route::get('/mail', [MailController::class, 'index']);
+    Route::post('/mail', [MailController::class, 'send']);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [ShopController::class, 'index']);

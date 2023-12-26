@@ -1,0 +1,21 @@
+.link__container:first-child {
+    margin-top: 50px
+}
+
+.link__container {
+    width: 400px;
+    height: 50px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}

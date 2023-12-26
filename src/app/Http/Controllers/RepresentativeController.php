@@ -30,7 +30,14 @@ class RepresentativeController extends Controller
             }
         }
 
-        return view('representative', ['shops' => $shops]);
+        $user = auth()->user();
+        $role_id = $user->role_id;
+
+        if ($role_id == 2) {
+            return view('representative', ['shops' => $shops]);
+        } else {
+            return redirect('/');
+        }
     }
 
     public function create(Request $request): RedirectResponse
@@ -64,5 +71,17 @@ class RepresentativeController extends Controller
         }
 
         return redirect("/representative/done");
+    }
+
+    public function select()
+    {
+        $user = auth()->user();
+        $role_id = $user->role_id;
+
+        if ($role_id == 2) {
+            return view('select');
+        } else {
+            return redirect('/');
+        }
     }
 }
