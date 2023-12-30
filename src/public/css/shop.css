@@ -154,3 +154,10 @@
     font-size: 14px;
     margin: 10px auto;
 }
+
+.mail__message {
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

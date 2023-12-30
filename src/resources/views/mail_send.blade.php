@@ -16,6 +16,7 @@
     <form action="/mail" method="POST" enctype="multipart/form-data">
         @csrf
         <h1 class="h1">メール内容</h1>
+        <p class="mail__message">※登録されている全てのユーザーに送信されます</p>
         <div class="input__container">
             <label for="title" class="input-label">件名</label>
             <input type="text" class="input-text" name="title" id="title" placeholder="件名を入力してください。" required>
