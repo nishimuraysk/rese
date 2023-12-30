@@ -8,8 +8,26 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\RepresentativeController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
 
-Route::group(['middleware' => ['auth']], function () {
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/mypage', [UserController::class, 'mypage']);
     Route::get('/mypage/reservation/{reservation_id}', [UserController::class, 'reservation']);
     Route::post('/mypage/reservation/{reservation_id}', [ReservationController::class, 'update']);
@@ -42,7 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/select', [RepresentativeController::class, 'select']);
     Route::get('/mail', [MailController::class, 'index']);
     Route::post('/mail', [MailController::class, 'send']);
-})->middleware(['auth', 'verified'])->name('dashboard');
+});
 
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/search', [ShopController::class, 'search']);
@@ -57,5 +75,9 @@ Route::get('logout', function () {
     Session()->flush();
     return redirect('/');
 })->name('logout');
+
+Route::get('/dashboard', function () {
+    return redirect('/');
+});
 
 require __DIR__ . '/auth.php';
