@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
@@ -12,7 +11,8 @@ class Reservation extends Model
         'shop_id',
         'date',
         'time',
-        'number'
+        'number',
+        'payment'
     ];
 
     public function shop()

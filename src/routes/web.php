@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RepresentativeController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/select', [RepresentativeController::class, 'select']);
     Route::get('/mail', [MailController::class, 'index']);
     Route::post('/mail', [MailController::class, 'send']);
+    Route::prefix('payment')->name('payment.')->group(function () {
+        Route::get('/create/{reservation_id}', [PaymentController::class, 'create'])->name('create');
+        Route::post('/store/{reservation_id}', [PaymentController::class, 'store'])->name('store');
+    });
+    Route::get('/payment/done', function () {
+        return view('payment_done');
+    });
 });
 
 Route::get('/', [ShopController::class, 'index']);

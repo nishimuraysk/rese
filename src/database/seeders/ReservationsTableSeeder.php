@@ -17,6 +17,7 @@ class ReservationsTableSeeder extends Seeder
             'date' => '2023-10-24',
             'time' => '19:00',
             'number' => '2',
+            'payment' => 'お支払い済',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
@@ -28,6 +29,7 @@ class ReservationsTableSeeder extends Seeder
             'date' => '2023-04-09',
             'time' => '17:30',
             'number' => '6',
+            'payment' => null,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
@@ -39,6 +41,7 @@ class ReservationsTableSeeder extends Seeder
             'date' => '2023-12-24',
             'time' => '19:00',
             'number' => '2',
+            'payment' => null,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
@@ -50,6 +53,7 @@ class ReservationsTableSeeder extends Seeder
             'date' => '2024-01-16',
             'time' => '19:30',
             'number' => '3',
+            'payment' => null,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
@@ -61,6 +65,7 @@ class ReservationsTableSeeder extends Seeder
             'date' => '2024-04-09',
             'time' => '18:00',
             'number' => '6',
+            'payment' => 'お支払い済',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
