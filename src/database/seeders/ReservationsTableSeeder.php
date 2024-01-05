@@ -13,6 +13,18 @@ class ReservationsTableSeeder extends Seeder
     {
         $param = [
             'user_id' => 1,
+            'shop_id' => 18,
+            'date' => '2024-01-05',
+            'time' => '19:00',
+            'number' => '6',
+            'payment' => 'お支払い済',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ];
+        DB::table('reservations')->insert($param);
+
+        $param = [
+            'user_id' => 1,
             'shop_id' => 5,
             'date' => '2023-10-24',
             'time' => '19:00',

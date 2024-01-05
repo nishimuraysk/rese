@@ -12,7 +12,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        // testをする場合はこちらを使用
+        // $schedule->command('remind:email')->everyMinute();
+
+        // 本番で実行する場合はこちらを使用
+        $schedule->command('remind:email')->dailyAt('10:00');
     }
 
     /**
@@ -20,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands(): void
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
