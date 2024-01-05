@@ -121,14 +121,19 @@ https://github.com/nishimuraysk/rese/assets/140567528/f90df1f7-e931-4037-8ec2-a0
 https://github.com/nishimuraysk/rese/assets/140567528/a0357c85-9136-4110-b681-c04d39aefc75
 
 ## 作成した目的
+
 制作の背景と目的：外部の飲食店予約サービスは手数料を取られるので自社で予約サービスを持ちたい。
+
 制作の目標：初年度でのユーザー数10,000人達成
 
 ## アプリケーションURL
+
 デプロイURL：未定
+
 http://localhost/
 
 ## 他のリポジトリ
+
 https://github.com/nishimuraysk/rese
 
 ## 機能一覧
@@ -166,19 +171,25 @@ https://github.com/nishimuraysk/rese
 - Laravel 10.31.0
 
 ## テーブル設計
+
 ◾️スプレッドシート
+
 https://docs.google.com/spreadsheets/d/108YHnxmsM5LXzs0BlPZFtS40sG9iPiqPRrNpSXuzrEE/edit#gid=1635115377
 
 ◾️画像
+
 https://github.com/nishimuraysk/rese/assets/140567528/07356a5d-bac5-4181-b060-0f1385104c57
 https://github.com/nishimuraysk/rese/assets/140567528/a5dafb1d-7dbc-48de-bc23-abaabb83718f
 https://github.com/nishimuraysk/rese/assets/140567528/2cc4ae11-bb96-4b1a-af24-4edb5b52848e
 
 ## ER図
+
 ◾️スプレッドシート
+
 https://docs.google.com/spreadsheets/d/108YHnxmsM5LXzs0BlPZFtS40sG9iPiqPRrNpSXuzrEE/edit#gid=320603785
 
 ◾️画像
+
 https://github.com/nishimuraysk/rese/assets/140567528/8d33382c-c8e3-4f22-b4e7-45cf7064ddeb
 
 # 環境構築
