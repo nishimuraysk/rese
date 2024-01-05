@@ -58,55 +58,53 @@ https://github.com/nishimuraysk/rese/assets/140567528/3572848e-c9f0-45b3-b63b-bd
 
 ◾️店舗代表者登録ページ（/representative）
 
-※seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
+※管理者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/f57c5eb3-25bf-4bab-a7ad-e44ee6f909dd
 
 ◾️店舗代表者登録完了ページ（/representative/done）
 
-※seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
+※管理者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/6998d3b7-50ec-4858-b600-41d367c5646c
 
 ◾️店舗代表者用予約内容一覧ページ（/shop/reservation/:shop_id）
 
-※seederにあるユーザーデータを利用する場合は、「test03@email.com」でご確認ください
+※店舗との紐付けがある店舗代表者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test03@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/cd933225-5042-436d-b095-816b60af7082
 
 ◾️店舗情報作成ページ（/shop）
 
-※seederにあるユーザーデータを利用する場合は、「test04@email.com」でご確認ください
+※店舗との紐付けがない店舗代表者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test04@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/c0e4e6ca-9b33-435c-90a5-8752503033ba
 
 ◾️店舗情報登録完了ページ（/shop/done）
 
-※seederにあるユーザーデータを利用する場合は、「test04@email.com」でご確認ください
+※店舗との紐付けがない店舗代表者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test04@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/01d07a41-ac6c-498a-abd9-3353a45eb09e
 
 ◾️店舗情報変更ページ（/shop/update/:shop_id）
 
-※seederにあるユーザーデータを利用する場合は、「test03@email.com」でご確認ください
+※店舗との紐付けがある店舗代表者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test03@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/43848711-4e23-4664-89bd-30136fe87c7c
 
 ◾️管理者機能選択ページ（/select）
 
-※seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
+※管理者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/4405c8ca-f232-40fc-a03c-9214cbec275a
 
 ◾️メール送信ページ（/mail）
 
-※seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
+※管理者のみが利用できるようにしているため、seederにあるユーザーデータを利用する場合は、「test02@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/6af6acb7-b3e9-49e2-927f-1020756ae36e
 
 ◾️メールアドレス確認リンクへの誘導ページ（/verify-email）
-
-※seederにあるユーザーデータを利用する場合は、「test05@email.com」でご確認ください
 
 https://github.com/nishimuraysk/rese/assets/140567528/956c94c9-8010-48ae-bae6-f587a3f9bcd5
 
