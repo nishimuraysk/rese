@@ -214,6 +214,11 @@ php artisan db:seed
 ```
 
 ## 他に記載することがあれば記述する
+
+◾️決済機能はStripeを使用しています
+
+composer require stripe/stripe-php
+
 ◾️データベースについては以下をご確認ください
 
 http://localhost:8080/
