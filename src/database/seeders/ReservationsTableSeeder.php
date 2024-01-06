@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -14,7 +13,7 @@ class ReservationsTableSeeder extends Seeder
         $param = [
             'user_id' => 1,
             'shop_id' => 18,
-            'date' => '2024-01-05',
+            'date' => '2024-01-06',
             'time' => '19:00',
             'number' => '6',
             'payment' => 'お支払い済',

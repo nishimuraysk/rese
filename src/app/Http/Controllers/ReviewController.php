@@ -10,19 +10,18 @@ use Carbon\Carbon;
 
 class ReviewController extends Controller
 {
-    public function index(Request $request, $reservation_id)
+    public function index($reservation_id)
     {
         $user = auth()->user();
         $reservation = Reservation::with('shop')->where('id', $reservation_id)->first();
         $today = Carbon::today('Asia/Tokyo')->format('Y-m-d');
         $review = Review::where('reservation_id', $reservation_id)->first();
 
-        if ( empty($reservation) || $user->id != $reservation->user_id || $reservation->date > $today || !empty($review) )
-        {
+        if (empty($reservation) || $user->id != $reservation->user_id || $reservation->date > $today || !empty($review)) {
             return redirect('/mypage');
         }
 
-        return view('review', ['reservation'=>$reservation, 'user'=>$user]);
+        return view('review', ['reservation' => $reservation, 'user' => $user]);
     }
 
     public function review(ReviewRequest $request, $reservation_id)
